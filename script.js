@@ -11,7 +11,7 @@ const humidity = document.getElementById('humid');
 const iscloud = document.getElementById('iscloud');
 const w_speed = document.getElementById('w-speed');
 const day = document.getElementById('isday');
-const info4 = document.querySelector('.info4');
+const rain = document.getElementById('rain');
 // const statuss = document.getElementById("statuss");
 
 
@@ -108,10 +108,22 @@ search.addEventListener("click", async () => {
 
 
 
-    info4.style.transform = "scaleX(0)";
-    setTimeout(() => {
-        info4.style.transform = "scaleX(1)";
-    }, 600);
+    const humidityVal = result.current.humidity;
+    const cloudVal = result.current.cloud;
+    const tempVal = result.current.temp_c;
+
+    if (humidityVal >= 80 && cloudVal >= 80 && tempVal <= 21) {
+        rain.innerText = "High rain possibility";
+    } else if (
+        humidityVal >= 60 && humidityVal <= 80 &&
+        cloudVal >= 50 && cloudVal <= 80 &&
+        tempVal >= 21 && tempVal <= 28
+    ){
+        rain.innerText = "Moderate rain possibility";
+    } else {
+        rain.innerText = "Low rain possibility";
+    }
+
 
 });
 

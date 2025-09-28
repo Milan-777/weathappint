@@ -268,18 +268,28 @@ button:hover {
 
 .info4{
   height: 40px;
-  width: 50%;
-  padding: 3px;
-  border: 1px solid;
+  width: 100%;
+  /* border: 1px solid; */
   position: absolute;
   top: 203px;
-  left: 100px;
-  border-radius: 500px;
-  background-color: white;
-  transform: scaleX(1);
-  transform-origin: left;
-  transition: transform 3s ease;
+  left: 0px;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+.info41{
+  height: 100%;
+  width: 60%;
+  background-color: white;
+  border-radius: 500px;
+  text-align: center;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 16px;
 }
 
 
@@ -336,7 +346,7 @@ button:hover {
   }
 
   input {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .txt p {
