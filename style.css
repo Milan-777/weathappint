@@ -220,7 +220,7 @@ button:hover {
 .info1,
 .info2 {
   height: 100%;
-  width: 50%;
+  width: 49%;
   /* border: 1px solid; */
 }
 
@@ -234,7 +234,7 @@ button:hover {
 
 
 .info1{
-  border-right: 1px solid ;
+  /* border-right: 1px solid ; */
 
 }
 .info1 div{
@@ -257,6 +257,14 @@ button:hover {
   margin-bottom: 20px;
 }
 
+
+
+.info3{
+  height: 165px;
+  border: 1px solid;
+  position: relative;
+  top: -30px;
+}
 
 @keyframes slideUp {
   0% {
