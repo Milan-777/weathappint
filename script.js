@@ -8,10 +8,12 @@ const country = document.getElementById("country");
 const temp = document.getElementById("temperature");
 const localtime = document.getElementById("time");
 const humidity = document.getElementById('humid');
-const iscloud= document.getElementById('iscloud');
-const w_speed= document.getElementById('w-speed');
-const day= document.getElementById('isday');
+const iscloud = document.getElementById('iscloud');
+const w_speed = document.getElementById('w-speed');
+const day = document.getElementById('isday');
+const info4 = document.querySelector('.info4');
 // const statuss = document.getElementById("statuss");
+
 
 
 const imageContainer = document.querySelector(".img");
@@ -72,13 +74,13 @@ search.addEventListener("click", async () => {
     country.innerText = result.location.country;
     localtime.innerText = result.location.localtime;
     temp.innerText = result.current.temp_c + "°C";
-    humidity.innerText= result.current.humidity+" %";
-    iscloud.innerText = result.current.cloud;
-    w_speed.innerText = result.current.wind_kph+' Kph';
-    if(result.current.is_day == 1){
-        day.innerText= 'day';
-    }else{
-        day.innerText= 'night';
+    humidity.innerText = result.current.humidity + " %";
+    iscloud.innerText = result.current.cloud + " %";
+    w_speed.innerText = result.current.wind_kph + ' Kph';
+    if (result.current.is_day == 1) {
+        day.innerText = 'day';
+    } else {
+        day.innerText = 'night';
     }
     // const tempval = result.current.temp_c;
     // if (tempval <= 20) {
@@ -102,6 +104,15 @@ search.addEventListener("click", async () => {
 
     //input clear
     input.value = "";
+
+
+
+
+    info4.style.transform = "scaleX(0)";
+    setTimeout(() => {
+        info4.style.transform = "scaleX(1)";
+    }, 600);
+
 });
 
 
