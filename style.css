@@ -224,6 +224,13 @@ button:hover {
   /* border: 1px solid; */
 }
 
+.info h5{
+  color: yellow;
+}
+.info p{
+  font-size: 17px;
+}
+
 
 @keyframes slideUp {
   0% {
