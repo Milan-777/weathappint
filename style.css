@@ -289,7 +289,9 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 16px;
+  line-height: 17px;
+  padding: 2px;
+  font-size: 15px;
 }
 
 
