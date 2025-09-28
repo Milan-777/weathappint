@@ -74,6 +74,14 @@ search.addEventListener("click", async () => {
 
 
 
+//enter action
+input.addEventListener('keydown', (event)=>{
+    if(event.key === "Enter"){
+        search.click();
+    }
+})
+
+
 // All operations
 function all() {
     alert("Welcome to my Weather_App...");
