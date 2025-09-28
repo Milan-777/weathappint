@@ -233,10 +233,7 @@ button:hover {
 
 
 
-.info1{
-  /* border-right: 1px solid ; */
 
-}
 .info1 div{
   display: flex;
   flex-direction: column;
@@ -260,7 +257,7 @@ button:hover {
 
 
 .info3{
-  height: 165px;
+  height: 160px;
   border: 1px solid;
   position: relative;
   top: -30px;
