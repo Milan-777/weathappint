@@ -208,11 +208,11 @@ button:hover {
 
   background-color: rgba(0, 0, 0, .8);
   border-radius: 35px;
-  padding: 30px 20px 20px 20px;
+  padding: 35px 20px 20px 20px;
   color: white;
   box-shadow: 0 0 30px rgba(0, 0, 0, .6);
   animation: slideUp forwards 2s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 1);
+  border: 1px solid yellow;
 
 
 }
@@ -257,8 +257,8 @@ button:hover {
 
 
 .info3{
-  height: 160px;
-  border: 1px solid;
+  height: 162px;
+  border: 1px solid yellow;
   position: relative;
   top: -30px;
 }
