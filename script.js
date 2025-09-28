@@ -102,12 +102,7 @@ search.addEventListener("click", async () => {
 
 
 
-    //input clear
-    input.value = "";
-
-
-
-
+    //weather prediction DOM
     const humidityVal = result.current.humidity;
     const cloudVal = result.current.cloud;
     const tempVal = result.current.temp_c;
