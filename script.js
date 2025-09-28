@@ -32,6 +32,21 @@ let count = 0;
 
 
 
+//enter action
+input.addEventListener('keydown', (event)=>{
+    if(event.key === "Enter"){
+        search.click();
+    }
+});
+
+
+
+
+
+
+
+
+
 //'click' event
 search.addEventListener("click", async () => {
 
@@ -74,12 +89,7 @@ search.addEventListener("click", async () => {
 
 
 
-//enter action
-input.addEventListener('keydown', (event)=>{
-    if(event.key === "Enter"){
-        search.click();
-    }
-})
+
 
 
 // All operations
