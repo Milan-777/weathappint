@@ -43,6 +43,7 @@ let count = 0;
 input.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         search.click();
+        input.blur();
     }
 });
 
