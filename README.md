@@ -8,3 +8,4 @@
 # input.blur() add
 # center
 # center info 2
+# final for today
