@@ -7,3 +7,4 @@
 # all files are modified
 # input.blur() add
 # center
+# center info 2
