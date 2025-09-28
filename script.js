@@ -1,51 +1,30 @@
 // References
-const search = document.getElementById('search-btn');
-const input = document.getElementById('ip');
-const region = document.getElementById('region');
-const city = document.getElementById('city');
-const country = document.getElementById('country');
+const search = document.getElementById("search-btn");
+const input = document.getElementById("ip");
+const region = document.getElementById("region");
+const city = document.getElementById("city");
+const country = document.getElementById("country");
 
-const temp = document.getElementById('temperature');
-const localtime = document.getElementById('localtime');
-const statuss = document.getElementById('statuss');
-const imageContainer = document.querySelector('.img'); // Assuming one element with class 'img'
+const temp = document.getElementById("temperature");
+const localtime = document.getElementById("localtime");
+const statuss = document.getElementById("statuss");
+const imageContainer = document.querySelector(".img");
 
+const imglocation = document.querySelector(".imglocation");
+const info = document.querySelector(".info");
 
-
-
-// Function to fetch data through API  
+// Function to fetch data through API
 async function data(location) {
-    const promise = await fetch(`https://api.weatherapi.com/v1/current.json?key=d69e554818a2444f810160129252409&q=${location}&aqi=yes`);
+    const promise = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=d69e554818a2444f810160129252409&q=${location}&aqi=yes`
+    );
     return await promise.json();
 }
 
 // Image array
-const images = [
-    'img1.webp',
-    'img2.webp',
-    'img3.webp',
-    'img4.webp'
-];
+const images = ["img1.webp", "img2.webp", "img3.webp", "img4.webp"];
 
 let count = 0;
-
-
-
-
-//enter action
-input.addEventListener('keydown', (event)=>{
-    if(event.key === "Enter"){
-        search.click();
-    }
-});
-
-
-
-
-
-
-
-
 
 //'click' event
 search.addEventListener("click", async () => {
@@ -57,8 +36,10 @@ search.addEventListener("click", async () => {
     console.log(result);
 
 
+
+
     //print api respond to the document (DOM)
-    city.innerText = '('+result.location.name+')';
+    city.innerText = "(" + result.location.name + ")";
     region.innerText = result.location.region;
     country.innerText = result.location.country;
 
@@ -67,22 +48,20 @@ search.addEventListener("click", async () => {
 
     const tempval = result.current.temp_c;
     if (tempval <= 20) {
-        statuss.innerText = 'Heavy Rain';
+        statuss.innerText = "Heavy Rain";
     } else if (tempval > 20 && tempval <= 30) {
-        statuss.innerText = 'Moderate Rain';
+        statuss.innerText = "Moderate Rain";
     } else {
-        statuss.innerText = 'Sunny / Hot';
+        statuss.innerText = "Sunny / Hot";
     }
 
-
     // Cycle through images
-    imageContainer.style.backgroundImage = `url('${images[count % images.length]}')`;
+    imageContainer.style.backgroundImage = `url('${images[count % images.length]
+        }')`;
     count++;
 
     //input clear
     input.value = "";
-
-
 });
 
 
@@ -90,9 +69,20 @@ search.addEventListener("click", async () => {
 
 
 
-
+//enter action
+input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        search.click();
+    }
+});
 
 // All operations
 function all() {
     alert("Welcome to my Weather_App...");
 }
+
+
+
+
+
+
