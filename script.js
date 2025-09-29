@@ -95,6 +95,7 @@ search.addEventListener("click", async () => {
 
 
 
+
     // Cycle through images
     imageContainer.style.backgroundImage = `url('${images[count % images.length]
         }')`;
