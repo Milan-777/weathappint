@@ -243,9 +243,7 @@ button:hover {
 }
 
 
-.info2{
-  padding-left: 20px;
-}
+
 .info2 div{
   display: flex;
   flex-direction: column;

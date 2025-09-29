@@ -12,16 +12,9 @@ const iscloud = document.getElementById('iscloud');
 const w_speed = document.getElementById('w-speed');
 const day = document.getElementById('isday');
 const rain = document.getElementById('rain');
-// const statuss = document.getElementById("statuss");
-
-
-
 const imageContainer = document.querySelector(".img");
-
 const imglocation = document.querySelector(".imglocation");
 const info = document.querySelector(".info");
-
-
 
 
 
@@ -59,13 +52,12 @@ input.addEventListener("keydown", (event) => {
 
 //'click' event
 search.addEventListener("click", async () => {
-
-
-    //print api respond to the console also
     const val = input.value;
-    const result = await data(val);
-    console.log(result);
 
+    //print api respond to the console
+    try{
+    const result = await data(val);    
+    console.log(result);
 
 
     //print api respond to the document (DOM)
@@ -77,31 +69,7 @@ search.addEventListener("click", async () => {
     humidity.innerText = result.current.humidity + " %";
     iscloud.innerText = result.current.cloud + " %";
     w_speed.innerText = result.current.wind_kph + ' Kph';
-    if (result.current.is_day == 1) {
-        day.innerText = 'day';
-    } else {
-        day.innerText = 'night';
-    }
-    // const tempval = result.current.temp_c;
-    // if (tempval <= 20) {
-    //     statuss.innerText = "Heavy Rain";
-    // } else if (tempval > 20 && tempval <= 30) {
-    //     statuss.innerText = "Moderate Rain";
-    // } else {
-    //     statuss.innerText = "Sunny / Hot";
-    // }
-
-
-
-
-
-    // Cycle through images
-    imageContainer.style.backgroundImage = `url('${images[count % images.length]
-        }')`;
-    count++;
-
-
-
+    day.innerText = result.current.is_day == 1 ? 'day' : 'night';
     //weather prediction DOM
     const humidityVal = result.current.humidity;
     const cloudVal = result.current.cloud;
@@ -119,6 +87,19 @@ search.addEventListener("click", async () => {
         rain.innerText = "Low rain possibility";
     }
 
+}catch(error){
+    console.error('Error fetching weather data:',error);
+    alert("Oops! Something went wrong. Please check your location or internet connection.");
+}
+
+
+
+
+    // Cycle through images
+    imageContainer.style.backgroundImage = `url('${images[count % images.length]
+        }')`;
+    count++;
+
 
 });
 
@@ -130,7 +111,7 @@ search.addEventListener("click", async () => {
 
 // All operations
 function all() {
-    alert("Welcome to my Weather_App...");
+    alert("Welcome to WeatherApp.com");
 }
 
 
